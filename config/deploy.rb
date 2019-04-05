@@ -11,13 +11,13 @@ set :rvm_ruby_version, '2.5.3'
 set :deploy_to, "/var/www/#{fetch(:application)}" 
 set :nginx_server_name, fetch(:application)
 set :nginx_config_name, fetch(:application)
-# set :nginx_ssl_certificate, "/etc/letsencrypt/live/#{fetch(:application)}/fullchain.pem"
-# set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/#{fetch(:application)}/privkey.pem"
-set :nginx_ssl_certificate, "/etc/letsencrypt/live/rubyvkube.ru/fullchain.pem"
-set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/rubyvkube.ru/privkey.pem"
+set :nginx_ssl_certificate, "/etc/letsencrypt/live/#{fetch(:application)}/fullchain.pem"
+set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/#{fetch(:application)}/privkey.pem"
+# set :nginx_ssl_certificate, "/etc/letsencrypt/live/rubyvkube.ru/fullchain.pem"
+# set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/rubyvkube.ru/privkey.pem"
 
 set :pty, true
-set :puma_init_active_record, false
+# set :puma_init_active_record, false
 
 append :linked_files, 'config/mongoid.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'public/.well-known', 'tmp/sockets', 'public/packs', 'public/uploads', 'node_modules'
