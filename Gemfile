@@ -70,6 +70,11 @@ group :development do
 
 end
 
+gem 'ed25519'
+gem 'bcrypt_pbkdf'
+Encoding.default_external = Encoding::UTF_8
+Encoding.default_internal = Encoding::UTF_8
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
