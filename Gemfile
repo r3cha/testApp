@@ -13,7 +13,7 @@ gem 'simple_enum', require: 'simple_enum/mongoid'
 gem 'devise'
 gem 'devise-i18n'
 # gem 'devise-bootstrap-views'
-gem 'bootstrap'
+gem "bootstrap", ">= 4.3.1"
 gem 'haml'
 
 # Use Puma as the app server
