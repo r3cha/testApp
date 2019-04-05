@@ -19,7 +19,7 @@ set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/rubyvkube.ru/privkey.pem"
 set :pty, true
 set :puma_init_active_record, false
 
-append :linked_files, 'config/master.key', 'config/mongoid.yml'
+append :linked_files, 'config/mongoid.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'public/.well-known', 'tmp/sockets', 'public/packs', 'public/uploads', 'node_modules'
 
 # before 'deploy:migrating', 'deploy:yarn_install'
