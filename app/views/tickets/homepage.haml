@@ -1,2 +1,11 @@
 %h2= "Привет #{current_user.short_name}."
-= render current_user.role.to_s
+
+
+%table.table.table-sm.table-striped.table-hover
+  %thead
+    %tr
+      - Ticket.fields.keys.each do |field|
+        %th{class: field}
+          = field.humanize
+  %tbody
+    = render partial: 'ticket_td', collection: @tickets, as: :ticket

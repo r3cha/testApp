@@ -8,11 +8,12 @@ gem 'rails', '~> 5.2.3'
 gem 'dotenv-rails'
 # Use sqlite3 as the database for Active Record
 gem 'mongoid'
+gem 'cancancan'
 gem 'simple_enum', require: 'simple_enum/mongoid'
 gem 'devise'
 gem 'devise-i18n'
 # gem 'devise-bootstrap-views'
-# gem 'bootstrap'
+gem 'bootstrap'
 gem 'haml'
 
 # Use Puma as the app server
