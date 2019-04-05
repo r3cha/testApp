@@ -42,7 +42,7 @@ class User
   as_enum :role, admin: 0, manager: 1
 
   def short_name
-    "#{first_name} #{last_name[0].upcase}."
+    "#{first_name} #{last_name[0].upcase}"
   end
 
 end

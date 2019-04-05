@@ -1,5 +1,6 @@
-%h2= "Привет #{current_user.short_name}."
-
+%h2
+  = "Привет #{current_user.short_name},"
+  = link_to('выйти', destroy_user_session_path, method: :delete)
 - if can? :create, Ticket
   = link_to 'Создать тикет', new_ticket_path
 
