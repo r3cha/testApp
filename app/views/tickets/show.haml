@@ -1,0 +1,6 @@
+%h2 Просмотр тикета
+
+- Ticket::SHOWFIELDS.each do |field|
+  %p= @ticket.send(field)
+
+= link_to 'назад', tickets_path

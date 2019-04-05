@@ -1,10 +1,12 @@
 %h2= "Привет #{current_user.short_name}."
 
+- if can? :create, Ticket
+  = link_to 'Создать тикет', new_ticket_path
 
 %table.table.table-sm.table-striped.table-hover
   %thead
     %tr
-      - Ticket.fields.keys.each do |field|
+      - Ticket::SHOWFIELDS.each do |field|
         %th{class: field}
           = field.humanize
   %tbody

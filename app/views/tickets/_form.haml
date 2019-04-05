@@ -1,0 +1,20 @@
+= form_with(model: ticket, local: true) do |form|
+  - if ticket.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(ticket.errors.count, "error")
+        prohibited this item from being saved:
+      %ul
+        - ticket.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :title, disabled: current_user.admin?
+    = form.text_field :title, disabled: current_user.admin?
+  .field
+    = form.label :body, disabled: current_user.admin?
+    = form.text_field :body, disabled: current_user.admin?
+  .field
+    = form.label :status
+    = form.select :status, Ticket.statuses.keys
+  .actions
+    = form.submit

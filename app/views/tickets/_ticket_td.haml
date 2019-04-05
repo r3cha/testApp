@@ -1,0 +1,14 @@
+%tr
+  - Ticket::SHOWFIELDS.each do |field|
+    %td
+      - value = ticket.send(field)
+      - if value.instance_of?(User)
+        = value.short_name
+      - else
+        
+        = field == 'status' ? value : value.to_s[0..15] + '...'
+  %td
+    - if can? :update, ticket
+      = link_to 'Изменить', edit_ticket_path(ticket)
+    - if can? :read, ticket
+      = link_to 'Просмотреть', ticket_path(ticket)
