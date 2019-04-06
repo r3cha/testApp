@@ -6,7 +6,7 @@ class Ticket
   field :title, type: String
   field :body, type: String
 
-  belongs_to :user, class_name: 'User' 
+  belongs_to :user
 
   as_enum :status, new: 0, taken: 1, closed: 2
 
